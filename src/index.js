@@ -3,10 +3,12 @@ require('./db/mongoose')
 const UserRouter = require('./router/user')
 const TaskRouter = require('./router/task');
 const nodemailer = require("nodemailer");
-require('dotenv').config();
-
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config();
+}
 const app = express();
 const port = process.env.PORT;
+console.log('DB URL starts with:', process.env.MONGODB_URL?.substring(0, 15));
 
 app.use(express.json());
 app.use(UserRouter)
