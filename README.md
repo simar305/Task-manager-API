@@ -29,48 +29,51 @@ Task-manager-API/
 ├── package.json
 └── README.md
 
-Step - 1 : git clone https://github.com/simar305/Task-manager-API.git
-           cd Task-manager-API
-Step - 2 : npm install
-Step - 3 : Create a .env file:
-PORT=3000
-MONGODB_URL=your_mongodb_connection_string
-JWT_SECRET=your_secret
+## 🚀 Setup & Installation
 
-Step - 4 : 4️⃣ Run locally
-npm run dev
+### Step 1️⃣ : Clone the repository
+```bash
+git clone https://github.com/simar305/Task-manager-API.git
+cd Task-manager-API
+
+###
 
 Server will start on: http://localhost:3000
 
-📌 API Endpoints
-🔹 User APIs
-Method	Endpoint	Description	Auth Required
-POST	/users	Create new user (Signup)	❌
-POST	/users/login	Login and get JWT	❌
-POST	/users/logout	Logout current session	✅
-POST	/users/logoutAll	Logout all sessions	✅
-GET	/users/me	Get logged-in user profile	✅
-PATCH	/users/me	Update profile (name, email, password, age)	✅
-DELETE	/users/me	Delete logged-in user	✅
-POST	/users/me/avatar	Upload avatar (jpg/png/webp)	✅
-DELETE	/users/me/avatar	Delete avatar	✅
-GET	/users/:id/avatar	Fetch user’s avatar by ID	❌
+## 📌 API Endpoints
 
-🔹 Task APIs
-Method	Endpoint	Description	Auth Required
-POST	/tasks	Create a new task	✅
-GET	/tasks	Get all tasks (supports ?completed=true/false, ?limit=10&skip=0, ?sortBy=createdAt:desc)	✅
-GET	/tasks/:id	Get task by ID	✅
-GET	/tasks/counts	Get total number of tasks	✅
-PATCH	/tasks/:id	Update task (description/completed)	✅
-DELETE	/tasks/:id	Delete task by ID	✅
-🛠️ Tech Stack
+### 🔹 User APIs
 
-**Node.js + Express.js
-**
-**MongoDB + Mongoose
-**
-**JWT Authentication
-**
-**Multer + Sharp (for avatar upload)
-**
+| Method  | Endpoint              | Description                                  | Auth Required |
+|---------|-----------------------|----------------------------------------------|---------------|
+| POST    | `/users`              | Create new user (Signup)                     | ❌ |
+| POST    | `/users/login`        | Login and get JWT                            | ❌ |
+| POST    | `/users/logout`       | Logout current session                       | ✅ |
+| POST    | `/users/logoutAll`    | Logout all sessions                          | ✅ |
+| GET     | `/users/me`           | Get logged-in user profile                   | ✅ |
+| PATCH   | `/users/me`           | Update profile (name, email, password, age)  | ✅ |
+| DELETE  | `/users/me`           | Delete logged-in user                        | ✅ |
+| POST    | `/users/me/avatar`    | Upload avatar (jpg/png/webp, <1MB)           | ✅ |
+| DELETE  | `/users/me/avatar`    | Delete avatar                                | ✅ |
+| GET     | `/users/:id/avatar`   | Fetch user’s avatar by ID                    | ❌ |
+
+---
+
+### 🔹 Task APIs
+
+| Method  | Endpoint              | Description                                                                 | Auth Required |
+|---------|-----------------------|-----------------------------------------------------------------------------|---------------|
+| POST    | `/tasks`              | Create a new task                                                           | ✅ |
+| GET     | `/tasks`              | Get all tasks (`?completed=true/false`, `?limit=10&skip=0`, `?sortBy=createdAt:desc`) | ✅ |
+| GET     | `/tasks/:id`          | Get task by ID                                                              | ✅ |
+| GET     | `/tasks/counts`       | Get total number of tasks                                                   | ✅ |
+| PATCH   | `/tasks/:id`          | Update task (description/completed)                                         | ✅ |
+| DELETE  | `/tasks/:id`          | Delete task by ID                                                           | ✅ |
+
+---
+
+## 🛠️ Tech Stack
+- **Node.js + Express.js**  
+- **MongoDB + Mongoose**  
+- **JWT Authentication**  
+- **Multer + Sharp** (for avatar upload)  
